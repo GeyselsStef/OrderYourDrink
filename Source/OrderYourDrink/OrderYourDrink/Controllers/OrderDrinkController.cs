@@ -3,6 +3,8 @@ using OrderYourDrink.ViewModels;
 
 namespace OrderYourDrink.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class OrderDrinkController : ControllerBase
     {
         private readonly ILogger _logger;
