@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackgroundWorker", "Backgro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunctionApp1", "FunctionApp1\FunctionApp1.csproj", "{423433B6-DBFB-4645-BCA5-4CF5F4239CEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderYourDrink", "OrderYourDrink\OrderYourDrink.csproj", "{9B0587B3-EAA7-4168-A459-7ADFA837EE43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderYourDrink", "OrderYourDrink\OrderYourDrink.csproj", "{9B0587B3-EAA7-4168-A459-7ADFA837EE43}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderYourDrink.BLL", "..\OrderYourDrink.BLL\OrderYourDrink.BLL.csproj", "{7BF78463-F160-40AD-9E1B-F986CFF21F74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{9B0587B3-EAA7-4168-A459-7ADFA837EE43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B0587B3-EAA7-4168-A459-7ADFA837EE43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B0587B3-EAA7-4168-A459-7ADFA837EE43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BF78463-F160-40AD-9E1B-F986CFF21F74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BF78463-F160-40AD-9E1B-F986CFF21F74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BF78463-F160-40AD-9E1B-F986CFF21F74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BF78463-F160-40AD-9E1B-F986CFF21F74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
