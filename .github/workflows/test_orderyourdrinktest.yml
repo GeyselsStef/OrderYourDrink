@@ -23,7 +23,7 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build  Source/OrderYourDrink/OrderYourDrink --configuration Release --environment Test
+        run: dotnet build  Source/OrderYourDrink/OrderYourDrink --configuration Release /p:EnvironmentName=Test
 
       - name: dotnet publish
         run: dotnet publish  Source/OrderYourDrink/OrderYourDrink -c Release /p:EnvironmentName=Test -o ${{env.DOTNET_ROOT}}/myapp
