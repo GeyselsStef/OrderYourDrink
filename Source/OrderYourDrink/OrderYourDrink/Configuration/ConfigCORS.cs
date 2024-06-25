@@ -22,6 +22,8 @@
                     });
                     config.AddPolicy(CorsSettings.AllowTest, policy =>
                     {
+                        policy.SetIsOriginAllowedToAllowWildcardSubdomains();
+                        policy.SetIsOriginAllowed(origin =>origin=="null" || new Uri(origin).Host == "localhost");
                         policy.WithOrigins("https://ashy-field-000da0603.5.azurestaticapps.net");
                         policy.AllowAnyMethod();
                         policy.AllowAnyHeader();

@@ -1,7 +1,14 @@
+using Microsoft.AspNetCore.Hosting;
 using OrderYourDrink.BLL;
 using OrderYourDrink.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
+{
+    if (hostingContext.HostingEnvironment.EnvironmentName.Equals("Test", StringComparison.InvariantCultureIgnoreCase))
+        config.AddUserSecrets<Program>();
+});
 
 // Add services to the container.
 
@@ -25,6 +32,8 @@ if (app.Environment.IsDevelopment())
     app.UseCors(CorsSettings. AllowAll);
 }else if (app.Environment.IsEnvironment("Test"))
 {
+    app.UseSwagger();
+    app.UseSwaggerUI();
     app.UseCors(CorsSettings.AllowTest);
 }
 else
