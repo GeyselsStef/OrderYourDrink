@@ -1,4 +1,5 @@
 using OrderYourDrink.BLL;
+using OrderYourDrink.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,13 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddCors(config => {    
-    config.AddPolicy("AllowAll", policy => {
-        policy.AllowAnyOrigin();
-        policy.AllowAnyMethod();
-        policy.AllowAnyHeader();
-    });
-});
+builder.Services.AddCorsSettings();
 
 // Setup services
 builder.Services.AddOrderYourDrinkServices();
@@ -27,7 +22,14 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-    app.UseCors("AllowAll");
+    app.UseCors(CorsSettings. AllowAll);
+}else if (app.Environment.IsEnvironment("Test"))
+{
+    app.UseCors(CorsSettings.AllowTest);
+}
+else
+{
+    app.UseCors(CorsSettings.AllowProd);
 }
 
 app.UseHttpsRedirection();
